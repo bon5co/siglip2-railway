@@ -1,0 +1,13 @@
+Wrapper code in this repository (app.py, entrypoint.sh, Dockerfile) is Apache-2.0, see LICENSE.
+
+The container image built from it also contains:
+
+- The model google/siglip2-base-patch16-224 at commit 75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2, Apache-2.0 per
+  the `license: apache-2.0` field of its Hugging Face model card (https://huggingface.co/google/siglip2-base-patch16-224),
+  (c) Google. SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization,
+  and Dense Features (Tschannen et al., 2025, https://arxiv.org/abs/2502.14786), pre-trained on the WebLI dataset.
+  The repository contains no separate LICENSE file; the licence statement is the model card metadata.
+  The weight and tokenizer files are fetched at build time and verified by sha256; the model card ships in the
+  image as /models/siglip2/MODEL_CARD.md.
+- PyTorch (BSD-3-Clause), Hugging Face transformers and tokenizers (Apache-2.0), Pillow (MIT-CMU / HPND),
+  NumPy (BSD-3-Clause) and the other Python dependencies pinned in requirements.txt, each under its own licence.
